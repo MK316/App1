@@ -5,14 +5,19 @@ import io
 
 st.title("📘 English Quiz from CSV")
 
-# --- STEP 1: Load CSV from GitHub ---
-# Replace with your actual GitHub raw link
-csv_url = "https://raw.githubusercontent.com/MK316/App1/refs/heads/main/quiz_questions.csv"
+# --- STEP 1: Load TSV (tab-separated) CSV from GitHub ---
+csv_url = "https://raw.githubusercontent.com/MK316/YourRepo/main/quiz_questions.csv"  # use .tsv if applicable
 
 try:
     response = requests.get(csv_url)
     response.raise_for_status()
-    df = pd.read_csv(io.StringIO(response.text))
+    
+    # ✅ Use sep='\t' for tab-separated files
+    df = pd.read_csv(io.StringIO(response.text), sep='\t')
+
+    # ✅ Normalize column names
+    df.columns = df.columns.str.strip().str.replace(" ", "").str.capitalize()
+
 except Exception as e:
     st.error(f"❌ Failed to load quiz data: {e}")
     st.stop()
