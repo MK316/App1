@@ -7,6 +7,9 @@ question = "What is the synonym of *happy*?"
 options = ["angry", "sad", "joyful", "tired", "hungry"]
 answer = "joyful"
 
+# ✅ Display the question
+st.markdown(question)
+
 user_choice = st.radio("Choose the correct answer:", options)
 
 if st.button("Check Answer"):
@@ -14,3 +17,4 @@ if st.button("Check Answer"):
         st.success("Correct!")
     else:
         st.error("Not quite. Try again.")
+
