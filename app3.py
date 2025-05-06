@@ -13,7 +13,7 @@ try:
     response.raise_for_status()
     
     # ✅ Use sep='\t' for tab-separated files
-    df = pd.read_csv(io.StringIO(response.text), sep='\t')
+    df = pd.read_csv(io.StringIO(response.text))
 
     # ✅ Normalize column names
     df.columns = df.columns.str.strip().str.replace(" ", "").str.capitalize()
