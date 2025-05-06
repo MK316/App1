@@ -7,7 +7,7 @@ st.title("📘 English Quiz from CSV")
 
 # --- STEP 1: Load CSV from GitHub ---
 # Replace with your actual GitHub raw link
-csv_url = "https://raw.githubusercontent.com/MK316/App1/main/quiz_questions.csv"
+csv_url = "https://raw.githubusercontent.com/MK316/App1/refs/heads/main/quiz_questions.csv"
 
 try:
     response = requests.get(csv_url)
