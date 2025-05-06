@@ -6,7 +6,7 @@ import io
 st.title("📘 English Quiz from CSV")
 
 # --- STEP 1: Load TSV (tab-separated) CSV from GitHub ---
-csv_url = "https://raw.githubusercontent.com/MK316/YourRepo/main/quiz_questions.csv"  # use .tsv if applicable
+csv_url = "https://raw.githubusercontent.com/MK316/App1/main/quiz_questions.csv"  # use .tsv if applicable
 
 try:
     response = requests.get(csv_url)
